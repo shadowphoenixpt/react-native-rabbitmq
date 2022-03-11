@@ -251,6 +251,23 @@ class RabbitMqConnection extends ReactContextBaseJavaModule  {
      
     }
 
+    @ReactMethod
+    public void basicReject(String queue_name, Double delivery_tag, Boolean requeue) {
+        RabbitMqQueue found_queue = null;
+        for (RabbitMqQueue queue : queues) {
+		    if (Objects.equals(queue_name, queue.name)){
+                found_queue = queue;
+            }
+        }
+
+        if (!found_queue.equals(null)){
+            long long_delivery_tag = Double.valueOf(delivery_tag).longValue();
+            found_queue.basicReject(long_delivery_tag, requeue);
+        }
+
+     
+    }
+
     /*
     @ReactMethod
     public void publishToQueue(String message, String exchange_name, String routing_key) {
