@@ -18,13 +18,11 @@ pod install
 
 ## Android
 
-npm install react-native-rabbitmq --save
 
 ## RN 0.60 <
 
 ## IOS
 
-npm install react-native-rabbitmq --save
 
  Installation with CocoaPods
 
@@ -92,10 +90,6 @@ react-native link
 
 
 ## Android
-
-npm install react-native-rabbitmq --save
-
-react-native link
 
 
 ## Usage
